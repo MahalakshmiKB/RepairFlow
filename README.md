@@ -220,14 +220,3 @@ $env:PGPASSWORD="YOUR_POSTGRES_PASSWORD"
 - **SMS / Email Alerts:** Automated notifications upon status changes (e.g., notifying the customer when status reaches `COMPLETED`) can be integrated via Twilio or JavaMailSender.
 
 ---
-
-## 12. College Project Viva Talking Points
-
-1. **Why Java Spring Boot instead of Node.js?**
-   - Enterprise-grade strongly typed architecture, mature transaction management (`@Transactional`), compile-time safety, and first-class JPA/Hibernate ORM integration.
-2. **How is tracking ID concurrency handled?**
-   - In `RepairService.java`, the ID generation method is synchronized and executes an atomic check against `repairTicketRepository.existsByTrackingId()` in a loop to ensure non-colliding sequential codes (`RF-YYYY-XXXX`).
-3. **How is customer privacy preserved?**
-   - Rather than returning the raw JPA entity, the `/api/tracking/{trackingId}` endpoint returns a dedicated `TrackingResponse` DTO that omits private fields (`customerEmail`, `customerPhone`, `internalNotes`).
-4. **Why use DTOs?**
-   - Prevents over-posting vulnerabilities, decouples the external API contract from database schema changes, and enables independent request validation via Bean Validation annotations.

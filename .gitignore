@@ -1,0 +1,22 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Java / Maven / Backend
+backend/target/
+backend/.env
+backend/application-local.properties
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/*.log
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
